@@ -28,8 +28,10 @@ func main() {
 			fmt.Println("2) Шаг не должен быть отрицательным")
 			fmt.Println("3) Разность координат не должна быть меньше шага")
 			fmt.Println()
-			continue
 		}
+
+		var arrayPoint []float32 = makeArrayWhisPoint(x1, x2, h)
+		printTablePoint(arrayPoint)
 	}
 }
 
@@ -48,12 +50,27 @@ func functionValue(valueX float32) float32 {
 	return res
 }
 
-func printTablePoint(x1 float32, x2 float32, h float32) {
+// функция для вывода таблицы
+func printTablePoint(arrayPoint []float32) {
 
-	for i := x1; i <= x2; i += h {
-		if (i > h) || (i != h) {
-			fmt.Println("x = ", i, "\t\t\tf(", i, ")=", functionValue(i))
-			continue
-		}
+	for _, valui := range arrayPoint {
+		fmt.Printf("x = %f\tf(%f) = %f \n", valui, valui, functionValue(valui))
 	}
+}
+
+// функция разбивает интервал на массив точек
+func makeArrayWhisPoint(x1 float32, x2 float32, h float32) []float32 {
+
+	var array []float32
+	i := x1
+
+	for ; i < x2; i += h {
+		array = append(array, i)
+	}
+	if i == x2 {
+		array = append(array, x2)
+	} else {
+		array = append(array, x2)
+	}
+	return array
 }

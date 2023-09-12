@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 )
 
@@ -20,6 +21,7 @@ func main() {
 		fmt.Fscan(os.Stdin, &x2)
 		fmt.Printf("Введите значение h (шаг): ")
 		fmt.Fscan(os.Stdin, &h)
+		fmt.Println()
 
 		if corectData(x1, x2, h) {
 			fmt.Println()
@@ -28,20 +30,23 @@ func main() {
 			fmt.Println("2) Шаг не должен быть отрицательным")
 			fmt.Println("3) Разность координат не должна быть меньше шага")
 			fmt.Println()
+			continue
 		}
 
 		var arrayPoint []float32 = makeArrayWhisPoint(x1, x2, h)
 		printTablePoint(arrayPoint)
+		fmt.Println(integratingRight(arrayPoint))
+
 	}
 }
 
 // функция проверки коректного ввода данных.
 func corectData(x1 float32, x2 float32, h float32) bool {
 	if (x1 > x2) && (h < 0) && (x2-x1 < h) {
-		return false
+		return true
 	}
 
-	return true
+	return false
 }
 
 // функция для вычисления значения в точке
@@ -73,4 +78,64 @@ func makeArrayWhisPoint(x1 float32, x2 float32, h float32) []float32 {
 		array = append(array, x2)
 	}
 	return array
+}
+
+// функция проверки интеграла на расходимость
+func checkCorectPoint(arrayPoint []float32, i int) bool {
+	if (functionValue(float32(arrayPoint[i])) == float32(math.Inf(-1))) || (functionValue(float32(arrayPoint[i])) == float32(math.Inf(1))) {
+		fmt.Println("Невозможно взять интеграл на данном промежутке, так как интеграл расходится")
+		fmt.Println()
+		return false
+	}
+	return true
+}
+
+// функция вычисления интеграла по ЛЕВОЙ границе
+func integratingLeft(arrayPoint []float32) float32 {
+	var si float32 = 0
+
+	for i := 0; i < len(arrayPoint)-2; i++ {
+
+		if checkCorectPoint(arrayPoint, i) {
+			if functionValue(float32(arrayPoint[i])) < functionValue(arrayPoint[i+1]) {
+				si += functionValue(float32(arrayPoint[i])) * (arrayPoint[i+1] - arrayPoint[i])
+			} else {
+				si += functionValue(float32(arrayPoint[i+1])) * (arrayPoint[i+1] - arrayPoint[i])
+			}
+		} else {
+			return 0
+		}
+	}
+	return si
+}
+
+// функция вычисления интеграла по ПРАВОЙ границе
+func integratingRight(arrayPoint []float32) float32 {
+	var si float32 = 0
+
+	for i := 0; i < len(arrayPoint)-2; i++ {
+
+		if checkCorectPoint(arrayPoint, i) {
+			if functionValue(float32(arrayPoint[i])) < functionValue(arrayPoint[i+1]) {
+				si += functionValue(float32(arrayPoint[i+1])) * (arrayPoint[i+1] - arrayPoint[i])
+			} else {
+				si += functionValue(float32(arrayPoint[i])) * (arrayPoint[i+1] - arrayPoint[i])
+			}
+		} else {
+			return 0
+		}
+	}
+
+	return si
+}
+
+// Интегрирование методом трапеции
+if checkCorectPoint(arrayPoint, i) {
+	if functionValue(float32(arrayPoint[i])) < functionValue(arrayPoint[i+1]) {
+		si += functionValue(float32(arrayPoint[i])) * (arrayPoint[i+1] - arrayPoint[i])
+	} else {
+		si += functionValue(float32(arrayPoint[i+1])) * (arrayPoint[i+1] - arrayPoint[i])
+	}
+} else {
+	return 0
 }

@@ -42,7 +42,10 @@ func run() {
 
 		var arrayPoint []float32 = makeArrayWhisPoint(x1, x2, h)
 
-		printTablePoint(arrayPoint)
+		//fmt.Println(arrayPoint)
+		fmt.Println(intrgrTrape(arrayPoint))
+
+		//printTablePoint(arrayPoint)
 
 		var integrationMethod int
 		var eps float32
@@ -60,7 +63,9 @@ func run() {
 			fmt.Println("Выберите способ интегрирования. Наберите цифру способа")
 			fmt.Println("1 - по ЛЕВОЙ стороне ")
 			fmt.Println("2 - по ПРАВОЙ стороне ")
-			fmt.Println("3 - по ТРАПЕЦИИ (-)")
+			fmt.Println("3 - по ТРАПЕЦИИ ")
+			fmt.Println("4 - по всем видам ")
+
 			fmt.Println()
 
 			fmt.Println("Введите число: ")
@@ -77,7 +82,11 @@ func run() {
 				resultIntMethod = integratingWithEps(arrayPoint, eps, dh, integratingRight)
 				break
 			case 3:
-				// в разработке)
+				resultIntMethod = integratingWithEps(arrayPoint, eps, dh, intrgrTrape)
+				break
+			case 4:
+				printAllIntegrals(arrayPoint, eps, dh)
+				break
 			default:
 				fmt.Println("Что-то пошло не так. Попробуйте еще раз, но используй числа только из диапозона от 1 - 3")
 				continue
@@ -90,6 +99,15 @@ func run() {
 		fmt.Println("Ответ = ", resultIntMethod, "при епселен =", eps)
 
 	}
+}
+
+// функция для вывода всех значений интеграла для каждого способа
+func printAllIntegrals(arrayPoint []float32, eps float32, dh float32) {
+	fmt.Println("\n")
+	fmt.Println("По ЛЕВОМУ интегрированию : ", integratingWithEps(arrayPoint, eps, dh, integratingLeft))
+	fmt.Println("По ПРАВОМУ интегрированию : ", integratingWithEps(arrayPoint, eps, dh, integratingRight))
+	fmt.Println("По ТРАПЕЦИИ интегрированию : ", integratingWithEps(arrayPoint, eps, dh, intrgrTrape))
+	fmt.Println()
 }
 
 func integratingWithEps(arrayPoint []float32, eps float32, dh float32, f func(arrayPoint []float32) float32) float32 {
@@ -205,7 +223,16 @@ func integratingRight(arrayPoint []float32) float32 {
 }
 
 // Интегрирование методом трапеции
-//func intrgrTrape(arrayPoint float32) float32 {
-//интегрирование по трапеции
-//	return
-//}
+func intrgrTrape(arrayPoint []float32) float32 {
+	var result float32
+	var dh float32 = arrayPoint[1] - arrayPoint[0]
+	var buff float32
+
+	for i := 1; i < len(arrayPoint)-2; i++ {
+		buff += functionValue(arrayPoint[i])
+	}
+
+	result = dh*((functionValue(arrayPoint[0])+functionValue(arrayPoint[len(arrayPoint)-2])/2)+buff) + ((functionValue(arrayPoint[len(arrayPoint)-2])+functionValue(arrayPoint[len(arrayPoint)-1]))/2)*(arrayPoint[len(arrayPoint)-2]-arrayPoint[len(arrayPoint)-1])
+
+	return result
+}

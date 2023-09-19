@@ -6,10 +6,17 @@ import (
 	"os"
 )
 
-func main() {
+const ITERATION_MAX = 500
 
+func main() {
+	run()
+}
+
+// главная функция
+func run() {
 	var x1, x2, h float32
 	var b byte
+	var v byte
 
 	fmt.Println("Лаботаторная работа №1")
 	fmt.Println("В данной ЛР будет проанализирована функция f(x) = (1/(x-2))+10 \n")
@@ -34,10 +41,79 @@ func main() {
 		}
 
 		var arrayPoint []float32 = makeArrayWhisPoint(x1, x2, h)
+
 		printTablePoint(arrayPoint)
-		fmt.Println(integratingRight(arrayPoint))
+
+		var integrationMethod int
+		var eps float32
+		var dh float32
+		var resultIntMethod float32
+
+		for v = 250; v <= 255; v++ {
+			fmt.Println()
+			fmt.Println("Введите ЭПСЕЛЕН для интегрирования:")
+			fmt.Fscan(os.Stdin, &eps)
+			if eps > 1 && eps < 0 {
+				continue
+			}
+			fmt.Println()
+			fmt.Println("Выберите способ интегрирования. Наберите цифру способа")
+			fmt.Println("1 - по ЛЕВОЙ стороне ")
+			fmt.Println("2 - по ПРАВОЙ стороне ")
+			fmt.Println("3 - по ТРАПЕЦИИ (-)")
+			fmt.Println()
+
+			fmt.Println("Введите число: ")
+			fmt.Fscan(os.Stdin, &integrationMethod)
+			fmt.Println("Введите величену уменьшения шага")
+			fmt.Fscan(os.Stdin, &dh)
+			fmt.Println()
+
+			switch integrationMethod {
+			case 1:
+				resultIntMethod = integratingWithEps(arrayPoint, eps, dh, integratingLeft)
+				break
+			case 2:
+				resultIntMethod = integratingWithEps(arrayPoint, eps, dh, integratingRight)
+				break
+			case 3:
+				// в разработке)
+			default:
+				fmt.Println("Что-то пошло не так. Попробуйте еще раз, но используй числа только из диапозона от 1 - 3")
+				continue
+
+			}
+			break
+
+		}
+
+		fmt.Println("Ответ = ", resultIntMethod, "при епселен =", eps)
 
 	}
+}
+
+func integratingWithEps(arrayPoint []float32, eps float32, dh float32, f func(arrayPoint []float32) float32) float32 {
+	buff := 0
+	var result float32 = f(arrayPoint)
+	if result == 0 {
+		return 0
+	}
+	var buffResult float32
+	var hstep float32 = arrayPoint[1] - arrayPoint[0]
+
+	for ; buff < ITERATION_MAX; buff++ {
+		var buffArrayPoint []float32 = makeArrayWhisPoint(arrayPoint[0], arrayPoint[len(arrayPoint)-1], hstep-dh)
+		buffResult = f(buffArrayPoint)
+		fmt.Println("result = ", result, " buffResult = ", buffResult)
+		if math.Abs(float64(result)-float64(buffResult)) < float64(eps) {
+			return result
+		} else {
+			result = buffResult
+			continue
+		}
+	}
+	fmt.Println("Не выполнилось условие количества циклов (500). ")
+	return 0
 }
 
 // функция проверки коректного ввода данных.
@@ -45,7 +121,6 @@ func corectData(x1 float32, x2 float32, h float32) bool {
 	if (x1 > x2) && (h < 0) && (x2-x1 < h) {
 		return true
 	}
-
 	return false
 }
 
@@ -130,12 +205,7 @@ func integratingRight(arrayPoint []float32) float32 {
 }
 
 // Интегрирование методом трапеции
-if checkCorectPoint(arrayPoint, i) {
-	if functionValue(float32(arrayPoint[i])) < functionValue(arrayPoint[i+1]) {
-		si += functionValue(float32(arrayPoint[i])) * (arrayPoint[i+1] - arrayPoint[i])
-	} else {
-		si += functionValue(float32(arrayPoint[i+1])) * (arrayPoint[i+1] - arrayPoint[i])
-	}
-} else {
-	return 0
-}
+//func intrgrTrape(arrayPoint float32) float32 {
+//интегрирование по трапеции
+//	return
+//}

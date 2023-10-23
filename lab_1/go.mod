@@ -1,6 +1,6 @@
 module github.com/robteix/testmod
 
-go 1.21.1
+go 1.23
 
 require (
 	github.com/cilium/ebpf v0.11.0 // indirect

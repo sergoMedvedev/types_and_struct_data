@@ -43,7 +43,6 @@ func run() {
 		var arrayPoint []float32 = makeArrayWhisPoint(x1, x2, h)
 
 		//fmt.Println(arrayPoint)
-		fmt.Println(intrgrTrape(arrayPoint))
 
 		//printTablePoint(arrayPoint)
 
@@ -144,7 +143,7 @@ func corectData(x1 float32, x2 float32, h float32) bool {
 
 // функция для вычисления значения в точке
 func functionValue(valueX float32) float32 {
-	res := (1 / (valueX - 2)) + 10
+	res := 2*(valueX*valueX) - valueX - 15
 	return res
 }
 

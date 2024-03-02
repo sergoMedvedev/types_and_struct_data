@@ -18,8 +18,8 @@ class TranslationPolishNotation:
 
     '''
 
-    def __init__(self):
-        self.input_array = []
+    def __init__(self, int_array):
+        self.input_array = int_array
         self.output_array = []
         self.stack = Stack()
 
@@ -67,7 +67,7 @@ class TranslationPolishNotation:
 
     def transform_array(self):
         for tokin in self.input_array:
-            if is_number(tokin):
+            if is_number(tokin) or tokin == "x":
                 self.output_array.append(tokin)
                 continue
             elif tokin == "(":
@@ -85,14 +85,6 @@ class TranslationPolishNotation:
                     break
 
 
-test = TranslationPolishNotation()
-test.input_array = ["(",2,"+",3,")","/",2]
 
 # ["(", 1, "+", 2, ")", "*", 3, "+", 10]
 #[10, "+", 18, "*", "(", 1, "+", 7, "-", 8, "*", 2, "/", "(", 1, "/", 3, ")", "+", 1, ")", "+", 10]
-test.transform_array()
-print(test.output_array)
-
-test1 = PolishEntry(test.output_array)
-test1.calculation()
-print(test1.result)

@@ -22,23 +22,29 @@ class Interface:
         buff = ''
         array_string_input = []
         for str in self.input_string:
-            if (is_number(str)):
+
+            if (is_number(str)) or str == "x":
                 buff += str
                 continue
+
             elif str == ' ':
                 continue
+
             elif (str == "."):
                 buff += str
                 continue
+
             elif (str in CONST_CHAR):
                 if buff != '':
                     array_string_input.append(buff)
                 array_string_input.append(str)
                 buff = ''
                 continue
+
             elif (str == 'x'):
                 array_string_input.append(str)
                 continue
+
             elif (str in CHAR_FUNC):
                 buff+=str
                 if buff in TRIGONO_FUNC:
@@ -46,6 +52,7 @@ class Interface:
                     buff = ''
                     continue
                 continue
+
             else:
                 return False
         if buff != '':
@@ -53,5 +60,11 @@ class Interface:
             buff = ''
         print("Валидация строки", self.input_string, "успешная!")
         return True
+
+    def have_x(self):
+        if "x" in self.input_string:
+            return 1
+        else:
+            return 0
 
 

@@ -7,7 +7,4 @@ def dowloud_matrix(name_file):
     except FileNotFoundError:
         return False
 
-def check_size(array):
-    if len(array) == len(array[0]):
-        return True
-    return False
+

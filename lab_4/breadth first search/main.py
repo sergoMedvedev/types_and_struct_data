@@ -11,7 +11,7 @@ array = []
 while True:
     print("Введите имя файла в корне прошграмма")
     #fileName = input()
-    fileName = 'matrix1.txt'
+    fileName = 'matrix.txt'
     boolen, array = dowloud_matrix(fileName)
     if type(boolen) == False:
         continue

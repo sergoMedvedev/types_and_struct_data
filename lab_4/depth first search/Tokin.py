@@ -2,10 +2,8 @@
 
 class Tokin:
 
-    def __init__(self):
-        self.tokin = ""
-        self.left = ''
-        self.right = ''
-
-
+    def __init__(self, element, left,right):
+        self.element =element
+        self.left = left
+        self.right = right
 

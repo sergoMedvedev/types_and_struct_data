@@ -32,7 +32,7 @@ class TranslationPolishNotation:
                 self.stack.pop()
                 break
 
-    def tokin_znak_operacii(self, tokin):  # TODO исправить!!!
+    def tokin_znak_operacii(self, tokin):  # TODO на унарность!!!
         while (True):
             if self.stack.stack == [] or self.stack.check() == "(":
                 self.stack.push(tokin)

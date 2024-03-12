@@ -14,3 +14,10 @@ g = Tokin('G', l, m)
 b = Tokin('B', d, e)
 c = Tokin('C', f, g)
 a = Tokin('A', b, c)
+
+arrayTokin = [a,b,c,d,e,f,g,h,i,g,k,l,m,n]
+
+print('Введите вершину: ', end='')
+vertex = int(input())
+
+

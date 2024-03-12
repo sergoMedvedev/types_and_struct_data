@@ -18,11 +18,13 @@ while (True):
         print("Введите строку для расчета:", end='')
         interface.input_string = input()
 
-
+print(interface.input_string)
 
 array_transform = TranslationPolishNotation(interface.input_string)
-
+print(array_transform.input_array)
 array_transform.transform_array()
+
+print(array_transform.output_array)
 
 condition = interface.have_x()
 print(condition)

@@ -22,6 +22,11 @@ class Interface:
         buff = ''
         array_string_input = []
         for str in self.input_string:
+            if str == '-':
+                if array_string_input == []:
+                    array_string_input.append('0')
+                elif array_string_input[-1] == '(':
+                    array_string_input.append('0')
 
             if (is_number(str)) or str == "x":
                 buff += str
@@ -58,7 +63,9 @@ class Interface:
         if buff != '':
             array_string_input.append(buff)
             buff = ''
-        print("Валидация строки", self.input_string, "успешная!")
+        #print("Валидация строки", self.input_string, "успешная!")
+        print('OOOKKK', array_string_input)
+        self.input_string = array_string_input
         return True
 
     def have_x(self):

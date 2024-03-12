@@ -11,7 +11,7 @@ type Stack struct {
 func work() {
 
 	fmt.Println("Введите число для действия:")
-	//TODO НАПИСАТЬ ЭТО ГОВНО
+
 
 }
 

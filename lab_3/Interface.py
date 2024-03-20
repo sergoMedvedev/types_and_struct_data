@@ -25,7 +25,8 @@ class Interface:
             if str == '-':
                 if array_string_input == []:
                     array_string_input.append('0')
-                elif array_string_input[-1] == '(':
+            if str == '-':
+                if array_string_input[-1] == '(':
                     array_string_input.append('0')
 
             if (is_number(str)) or str == "x":
@@ -75,3 +76,4 @@ class Interface:
             return 0
 
 
+#-1+20-7*(9-7*6^2*4^(-1))+4*x+sin(x)

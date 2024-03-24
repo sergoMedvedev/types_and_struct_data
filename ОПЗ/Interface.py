@@ -2,8 +2,8 @@ from function import is_number
 
 '''СИМВОЛЫ НА ПРОВЕРКУ ВАЛИДАЦИИ'''
 CONST_CHAR = ['/', '*', '^', '+', '-', '(', ')']
-CHAR_FUNC = ['s','i','n','c','o','s','t','g']
-TRIGONO_FUNC = ['sin','cos','tg']
+CHAR_FUNC = ['s', 'i', 'n', 'c', 'o', 's', 't', 'g']
+TRIGONO_FUNC = ['sin', 'cos', 'tg']
 
 
 class Interface:
@@ -23,11 +23,24 @@ class Interface:
         array_string_input = []
         for str in self.input_string:
             if str == '-':
-                if array_string_input == []:
-                    array_string_input.append('0')
+                if buff != '':
+                    array_string_input.append(buff)
+                    buff = ''
+                    if array_string_input == []:
+                        array_string_input.append('0')
+                else:
+                    if array_string_input == []:
+                        array_string_input.append('0')
+
             if str == '-':
-                if array_string_input[-1] == '(':
-                    array_string_input.append('0')
+                if buff != '':
+                    array_string_input.append(buff)
+                    buff = ''
+                    if array_string_input[-1] == '(':
+                        array_string_input.append('0')
+                else:
+                    if array_string_input[-1] == '(':
+                        array_string_input.append('0')
 
             if (is_number(str)) or str == "x":
                 buff += str
@@ -52,7 +65,7 @@ class Interface:
                 continue
 
             elif (str in CHAR_FUNC):
-                buff+=str
+                buff += str
                 if buff in TRIGONO_FUNC:
                     array_string_input.append(buff)
                     buff = ''
@@ -64,7 +77,7 @@ class Interface:
         if buff != '':
             array_string_input.append(buff)
             buff = ''
-        #print("Валидация строки", self.input_string, "успешная!")
+        # print("Валидация строки", self.input_string, "успешная!")
         print('OOOKKK', array_string_input)
         self.input_string = array_string_input
         return True
@@ -75,5 +88,4 @@ class Interface:
         else:
             return 0
 
-
-#-1+20-7*(9-7*6^2*4^(-1))+4*x+sin(x)
+# -1+20-7*(9-7*6^2*4^(-1))+4*x+sin(x)

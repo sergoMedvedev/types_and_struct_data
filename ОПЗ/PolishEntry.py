@@ -53,7 +53,7 @@ class PolishEntry:
                 stack_result.stack.remove(None)
 
             elif (char in UNARY_OPERANDS):
-                number1 = stack_result.pop()
+                number1 = float(stack_result.pop())
                 stack_result.push(stack_result.push(calculation_binary(number1=number1, operand=char)))
                 stack_result.stack.remove(None)
         self.result = stack_result.pop()

@@ -47,4 +47,7 @@ def priority_algebraic(char):
         return 0
 
 def print_point(point, result):
-    print("В точке х=",round(point, 2),"\tфункция имеет значение: ", round(result,2))
+    if result != "-":
+        print("В точке х=",round(point, 2),"\tфункция имеет значение: ", round(result,2))
+    else:
+        print("В точке х=",round(point, 2),"\tфункция имеет значение:\t- ")

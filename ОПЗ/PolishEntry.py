@@ -33,35 +33,42 @@ class PolishEntry:
 
 
         for char in self.input_polish_string:
+            try:
+                if is_number(char):
+                    stack_result.push(char)
+                    continue
 
-            if is_number(char):
-                stack_result.push(char)
-                continue
+                elif char == "x":
+                    stack_result.push(x)
+                    continue
 
-            elif char == "x":
-                stack_result.push(x)
-                continue
+                elif char == "":
+                    stack_result.push(x)
+                    continue
 
-            elif char == "":
-                stack_result.push(x)
-                continue
+                elif (char in BINARY_OPERANDS):
+                    # если в стеке есть 2 элемента
+                        number2 = float(stack_result.pop())
+                        number1 = float(stack_result.pop())
+                        stack_result.push(calculation_binary(number1, number2, char))
+                        #stack_result.stack.remove(None)
+                    #else
+                        #ахтунг! не хватает операндов! вернуть ошибку класса "неверная ОПЗ"
 
-            elif (char in BINARY_OPERANDS):
-                number2 = float(stack_result.pop())
-                number1 = float(stack_result.pop())
-                stack_result.push(stack_result.push(calculation_binary(number1, number2, char)))
-                stack_result.stack.remove(None)
-
-            elif (char in UNARY_OPERANDS):
-                number1 = float(stack_result.pop())
-                stack_result.push(stack_result.push(calculation_binary(number1=number1, operand=char)))
-                stack_result.stack.remove(None)
-        self.result = stack_result.pop()
-        if x != "":
-            return self.result
-        else:
-            return None
-
+                elif (char in UNARY_OPERANDS):
+                    number1 = float(stack_result.pop())
+                    stack_result.push(stack_result.push(calculation_binary(number1=number1, operand=char)))
+                    stack_result.stack.remove(None)
+                self.result = stack_result.check()
+                if x != "":
+                    return self.result
+                else:
+                    return None
+            except ZeroDivisionError:
+                return "-"
+            except FloatingPointError: # 0 ^ -k и ещё отриц. число в нецелой степени (корень из отриц. числа)
+                return "-"
+        #
 
     def calculation_func(self):  # TODO НАПИСАТЬ МЕТОД ЛЯ РАСЧЕТА ВЫРОЖЕНИЯ, КОТОРАЯ ПРЕДСТАВЛЕННА В ВИДЕ ФУНКЦИИ
         print("ВВедите интервалы для нахождения значений функции")
@@ -88,6 +95,7 @@ class PolishEntry:
         print(array_point)
 
         for point in array_point:
+
             print_point(point,self.calculation(point))
 
 

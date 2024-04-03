@@ -37,7 +37,7 @@ class Binar:
         except IndexError:
             self.result = None
 
-
+# на анализе алгоритмов можно будет сравнить этот бинарный поиск с нерекурсивным (есть такая лаба)
 
 def testBinarPoisk(array = None, number = None):
     test = Binar(array, number)

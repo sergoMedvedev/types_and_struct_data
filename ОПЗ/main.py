@@ -1,3 +1,5 @@
+import math
+
 from Interface import Interface
 from PolishEntry import PolishEntry
 from TranslationPolishNotation import TranslationPolishNotation

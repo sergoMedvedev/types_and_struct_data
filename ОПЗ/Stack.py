@@ -18,3 +18,9 @@ class Stack:
             return self.stack[-1]
         except IndexError:
             return 0
+
+    def check_two_arg(self):
+        if (len(self.stack) >= 2):
+            return True
+        else:
+            return False

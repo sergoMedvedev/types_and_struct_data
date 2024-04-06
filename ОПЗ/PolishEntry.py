@@ -1,11 +1,12 @@
 from Stack import Stack
 from function import is_number, calculation_binary,print_point
+from ErrorEntity import ErrorEntity
 
 BINARY_OPERANDS = ['/', '*', '+', '-', '^']
 UNARY_OPERANDS = ['sin', 'cos', 'tg', 'ctg']
 
 
-class PolishEntry:
+class PolishEntry(ErrorEntity):
     """
     Данный класс высчитывает по польской записи значение выражения
 
@@ -21,6 +22,7 @@ class PolishEntry:
         self.input_polish_string = polish_str
         self.result = 0
         self.condition = condition
+        self.error = ErrorEntity()
         if condition == 1:
             self.calculation_func()
         else:
@@ -47,13 +49,14 @@ class PolishEntry:
                     continue
 
                 elif (char in BINARY_OPERANDS):
-                    # если в стеке есть 2 элемента
+                    if (self.input_polish_string != [] and stack_result.check_two_arg()):
                         number2 = float(stack_result.pop())
                         number1 = float(stack_result.pop())
+
                         stack_result.push(calculation_binary(number1, number2, char))
-                        #stack_result.stack.remove(None)
-                    #else
-                        #ахтунг! не хватает операндов! вернуть ошибку класса "неверная ОПЗ"
+                        continue
+                    else:
+                        self.error.error_OPZ_undefind_arg()
 
                 elif (char in UNARY_OPERANDS):
                     number1 = float(stack_result.pop())
@@ -65,9 +68,17 @@ class PolishEntry:
                 else:
                     return None
             except ZeroDivisionError:
-                return "-"
+                if x == '':
+                    return print("Деление на нуль")
+                else:
+                    return "-"
             except FloatingPointError: # 0 ^ -k и ещё отриц. число в нецелой степени (корень из отриц. числа)
                 return "-"
+            except ValueError:
+                return print("ошибка привычислении. корень из отр. числа")
+
+        self.result = stack_result.pop()
+        return self.result
         #
 
     def calculation_func(self):  # TODO НАПИСАТЬ МЕТОД ЛЯ РАСЧЕТА ВЫРОЖЕНИЯ, КОТОРАЯ ПРЕДСТАВЛЕННА В ВИДЕ ФУНКЦИИ

@@ -7,7 +7,10 @@
 
 
     поля:
+    self.matrix - двумерный массив
 
     методы:
+    readFile(nameFile: string)
+    sumMatrix(matrix1: Matrix, matrix2: Matrix) => Result: Matrix
 
 """

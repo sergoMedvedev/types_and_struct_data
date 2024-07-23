@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="227a5dff-8641-4600-bdb2-00a9888cc9aa" name="Changes" comment="++">
-      <change afterPath="$PROJECT_DIR$/разряженные_матрицы/Matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ОПЗ/Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/ОПЗ/Interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ОПЗ/PolishEntry.py" beforeDir="false" afterPath="$PROJECT_DIR$/ОПЗ/PolishEntry.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/разряженные_матрицы/Error.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/разряженные_матрицы/FirstMethod.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/разряженные_матрицы/InterfaceForMatrix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/разряженные_матрицы/Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы/AbstractInterface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/разряженные_матрицы/Matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы/Matrix.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

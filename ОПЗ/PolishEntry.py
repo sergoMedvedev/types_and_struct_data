@@ -113,6 +113,8 @@ class PolishEntry(ErrorEntity):
 
 
 
+-(-(-(-1)))+100
 
+#9+10) ТЕСТ
 
 

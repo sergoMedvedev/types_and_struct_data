@@ -16,12 +16,17 @@ class Interface:
     def __init__(self, name, string):
         self.name_project = name
         self.input_string = string
+        self.cout_skobcki=0
 
     # функция для валидации
     def check_validate(self):
         buff = ''
         array_string_input = []
         for str in self.input_string:
+            if str == "(":
+                self.cout_skobcki-=1
+            elif str == ")":
+                self.cout_skobcki +=1
             if str == '-':
                 if buff != '':
                     array_string_input.append(buff)
@@ -74,6 +79,9 @@ class Interface:
 
             else:
                 return False
+        if self.cout_skobcki != 0:
+            print("Допущена ошибка в скобках. Количество открывающих скобок не равно закрывающим")
+            exit()
         if buff != '':
             array_string_input.append(buff)
             buff = ''
@@ -87,5 +95,6 @@ class Interface:
             return 1
         else:
             return 0
+
 
 # -1+20-7*(9-7*6^2*4^(-1))+4*x+sin(x)

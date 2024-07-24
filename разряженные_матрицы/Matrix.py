@@ -14,7 +14,7 @@
     sumMatrix(matrix1: Matrix, matrix2: Matrix) => Result: Matrix
 
 """
-
+import Error
 
 class Matrix:
     def __init__(self, nameFile: str):
@@ -34,3 +34,5 @@ class Matrix:
                 b = []
             return True, new
         except FileNotFoundError:
+            errno = Error
+

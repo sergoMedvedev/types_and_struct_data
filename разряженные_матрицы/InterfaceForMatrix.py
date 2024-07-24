@@ -1,5 +1,5 @@
 """
-    Данный класс будет выполнять роль интерфейса для ЛР.
+
     Этот класс будет работать с объектами матриц, выполнять проверку, выводить информацию на экран.
 
     - поля
@@ -9,3 +9,17 @@
 
 
 """
+import AbstractInterface
+class InterfaceForMatrix(AbstractInterface):
+
+    def packing(self):
+        print("я пидорас")
+
+
+
+    def checkResult(self, matrix1, matrix2):
+        pass
+
+
+
+

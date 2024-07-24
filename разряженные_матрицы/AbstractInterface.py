@@ -9,3 +9,16 @@
     unpackaging()
 
 """
+
+import abc
+class InterfaceForMatrix(abc.ABC):
+
+    #метод, который должен реализовывать упаковку
+    @abc.abstractmethod
+    def packing(self):
+        pass
+
+    #метод, который реализовывает распоковку
+    @abc.abstractmethod
+    def unpacking(self):
+        pass

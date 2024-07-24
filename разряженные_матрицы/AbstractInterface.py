@@ -11,7 +11,7 @@
 """
 
 import abc
-class InterfaceForMatrix(abc.ABC):
+class AbstractInterface(abc.ABC):
 
     #метод, который должен реализовывать упаковку
     @abc.abstractmethod

@@ -1,6 +1,6 @@
-from InterfaceForMatrix import InterfaceForMatrix
+from Matrix import Matrix
 
-test = InterfaceForMatrix
+test = Matrix("разряженные_матрицы/data/symmetrical/matrix1.txt")
 
 
 

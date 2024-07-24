@@ -9,11 +9,23 @@
 
 
 """
-import AbstractInterface
+from AbstractInterface import AbstractInterface
+from Дженингса import Дженингс
 class InterfaceForMatrix(AbstractInterface):
 
+    def __init__(self):
+        print("Начало работы\n")
+        print("какую часть ЛР выолнять? (Введите 1 - первая часть, 2 - вторая часть)\n:")
+        numberPart = str(input())
+
+        if numberPart == "1":
+            matrix = Дженингс("разряженные_матрицы/data/symmetrical/matrix1.txt")
+
+
+
     def packing(self):
-        print("я пидорас")
+        pass
+
 
 
 

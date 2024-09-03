@@ -1,14 +1,40 @@
-from pyparsing import empty
-
-
 class Node:
 
-    def __init__(self, item, value: int, r, l, byte):
-        self.item = item  # символ
-        self.value = value  # значение повторения
-        self.r = r  # правый корень
-        self.l = l  # левый корень
-        self.byteNumber = byte
+    def __init__(self, weight, left, right, number):
+        self.number = number # число это 1 или 0
+        self.weight = weight # вес вершины это число
+        self.left = self.getBreachLeft(left) #ссылка на левую вершину
+        self.right = self.getBreachRigth(right) #ссылка на правую вершину
+        self.totleResult = self.summTotleResult(self.left, self.right) # суммарный вес
+
+    def summTotleResult(self, left, right):
+        if left == None:
+            return 0
+        if right == None:
+            return 0
+        return left.getWeight() + right.getWeight()
+
+    def getWeight(self):
+        if self.weight == 0:
+            return 0
+        return self.weight
+
+    def getBreachLeft(self, left):
+        if left == None:
+            return None
+        return left
+
+    def getBreachRigth(self, right):
+        if right == None:
+            return None
+        return right
+
+
+def makeUnit(weight, name, number):
+    if name != "":
+        return Node(weight, None, None, number)
+
+
 
 def main(string: str):
     # функция будет производить сжатие по хаффману.
@@ -28,33 +54,30 @@ def main(string: str):
     frequency = dict(sorted(frequency.items(), key=lambda x: x[1]))
     print(frequency)
 
-    leftTree = None
-    rithtTree = None
+    #Построение дерева Хаффмана
 
-    for item in frequency.keys():
-        left = None
-        ritht = None
-        if rithtTree == None:
-            ritht = Node(item, frequency[item], None, None, 1)
-            continue
-        elif leftTree == None:
-            left = Node(item, frequency[item], None, None, 0)
-            continue
-        # обработать краевые моменты пустота, один символ
+    dictResult ={}
 
-        if left != None and ritht != None:
 
-            if rithtTree == None and leftTree == None:
-                rithtTree = Node(item, frequency[item], ritht, left, 1)
-                left = None
-                ritht = rithtTree
-            elif leftTree != None and rithtTree != None:
-                leftTree = Node(item, frequency[item], ritht, left, 0)
-                left = leftTree
-                ritht = leftTree
+    # ТУТ КАКОЕ-ТО ГОВНО! НАДО ПОДУМАТЬ И РЕАЛИЗОВАТЬ!!!!!!!!!
 
-        elif left == None and ritht != None:
-            pass
+    while frequency != {}:
+        frequency = dict(sorted(frequency.items(), key=lambda x: x[1]))
+        print(frequency)
+        left = makeUnit(frequency[list(frequency.keys())[0]], list(frequency.keys())[0], 1)
+        dictResult[left] = list(frequency.keys())[0]
+        del frequency[list(frequency.keys())[0]]
+        right = makeUnit(frequency[list(frequency.keys())[0]], list(frequency.keys())[0], 0)
+        dictResult[right] = list(frequency.keys())[0]
+        del frequency[list(frequency.keys())[0]]
+
+        resultUnit = Node(left.getWeight()+right.getWeight(), left, right,1)
+
+
+
+
+
+
 
 
 

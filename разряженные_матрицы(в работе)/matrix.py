@@ -32,8 +32,8 @@ class Matrix :
              print("")
 
      def printMatrixunpacking(self):
-         for i in range(len(self.matrix)):
-             for j in range(len(self.matrix[0])):
+         for i in range(self.row):
+             for j in range(self.column):
                  print(self.unpackingMatrix[i][j], end="\t")
              print("")
 

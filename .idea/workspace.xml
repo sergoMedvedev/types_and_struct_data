@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="227a5dff-8641-4600-bdb2-00a9888cc9aa" name="Changes" comment="++">
-      <change afterPath="$PROJECT_DIR$/СТЕК+ОЧЕРЕДЬ(update_queuer)/queue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ОПЗ/Interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/ОПЗ/Interface.py" afterDir="false" />
-    </list>
+    <list default="true" id="227a5dff-8641-4600-bdb2-00a9888cc9aa" name="Changes" comment="обновлением репы" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,8 +160,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.польская запись" />
       <item itemvalue="Python.сжатие по Хаффману" />
+      <item itemvalue="Python.польская запись" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -223,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725405928536</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="обновлением репы">
+      <option name="closed" value="true" />
+      <created>1728635185318</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728635185318</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,18 +235,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="++" />
-    <option name="LAST_COMMIT_MESSAGE" value="++" />
+    <MESSAGE value="обновлением репы" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновлением репы" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ОПЗ/PolishEntry.py</url>
+          <url>file://$PROJECT_DIR$/ОПЗ(ОК)/PolishEntry.py</url>
           <line>32</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ОПЗ/TranslationPolishNotation.py</url>
+          <url>file://$PROJECT_DIR$/ОПЗ(ОК)/TranslationPolishNotation.py</url>
           <line>20</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>

@@ -1,7 +1,7 @@
-from Matrix import Matrix
-
-test = Matrix("разряженные_матрицы(в работе)/data/symmetrical/matrix1.txt")
-
+from matrix import Matrix
+# Лабораторная работа по Разрежанным матрицам.
 
 
+test = Matrix("1matrix.txt")
 
+print(test.matrix)

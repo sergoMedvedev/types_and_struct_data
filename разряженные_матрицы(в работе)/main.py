@@ -1,14 +1,23 @@
 from matrix import Matrix, summMatrix
-from method1 import packMatrix
+from method1 import packMatrix, unpackingMatrix, unpackingMatrix2
 # Лабораторная работа по Разрежанным матрицам.
 
 
 test1 = Matrix("1matrix.txt")
 test2 = Matrix("2matrix.txt")
 
-mass = summMatrix(test2.matrix, test1.matrix)
-test3 = Matrix()
-test3.matrix = mass
+packMatrix(test1)
+print(test1.d)
+print(test1.an)
 
-test3.printMatrix()
+#print(unpackingMatrix2(test1.an, test1.d, test1.row))
+
+unpackingMatrix(test1)
+
+test1.printMatrixunpacking()
+# print()
+# test1.printMatrix()
+
+
+
 

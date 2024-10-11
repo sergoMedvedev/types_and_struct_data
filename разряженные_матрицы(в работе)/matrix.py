@@ -5,6 +5,8 @@ class Matrix :
          self.an = []
          self.d = []
          self.method = ""
+         self.unpackingMatrix = [[]]
+
 
          path = "matrix/1part/" + nameFileWithMatrix
 
@@ -12,6 +14,9 @@ class Matrix :
              self.matrix = self.readMatrix(path)
          else:
              self.matrix = [[]]
+
+         self.row = len(self.matrix)
+         self.column = len(self.matrix[0])
 
 
      def readMatrix(self, nameFile):
@@ -25,6 +30,13 @@ class Matrix :
              for j in range(len(self.matrix[0])):
                  print(self.matrix[i][j], end="\t")
              print("")
+
+     def printMatrixunpacking(self):
+         for i in range(len(self.matrix)):
+             for j in range(len(self.matrix[0])):
+                 print(self.unpackingMatrix[i][j], end="\t")
+             print("")
+
 def summMatrix(matrix1, matrix2):
     matrixResult = []
 

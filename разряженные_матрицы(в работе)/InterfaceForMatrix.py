@@ -19,7 +19,7 @@ class InterfaceForMatrix(AbstractInterface):
         numberPart = str(input())
 
         if numberPart == "1":
-            matrix = Дженингс("разряженные_матрицы/data/symmetrical/matrix1.txt")
+            matrix = Дженингс("разряженные_матрицы(в работе)/data/symmetrical/matrix1.txt")
 
 
 

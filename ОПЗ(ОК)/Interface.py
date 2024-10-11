@@ -25,6 +25,8 @@ class Interface:
         for str in self.input_string:
             if str == "(":
                 self.cout_skobcki-=1
+                if self.cout_skobcki < 0 :
+                    return False
             elif str == ")":
                 self.cout_skobcki +=1
             if str == '-':
@@ -81,6 +83,7 @@ class Interface:
                 return False
         if self.cout_skobcki != 0:
             print("Допущена ошибка в скобках. Количество открывающих скобок не равно закрывающим")
+            return False
             exit()
         if buff != '':
             array_string_input.append(buff)

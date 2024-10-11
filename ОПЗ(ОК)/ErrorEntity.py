@@ -3,7 +3,7 @@ import sys
 
 class ErrorEntity:
     """
-    класс ошибок для ОПЗ
+    класс ошибок для ОПЗ(ОК)
     """
     def __init__(self):
         self.name=None

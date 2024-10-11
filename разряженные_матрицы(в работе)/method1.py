@@ -16,14 +16,15 @@ def packMatrix(matrix):
         wasNotZeroElement = False
 
         for j in range(0, i+1, 1):
-            if mass[i][j] != 0 or wasNotZeroElement  :
+            if mass[i][j] != 0 or wasNotZeroElement or j == i:
                 wasNotZeroElement = True
                 an.append(mass[i][j])
-        d.append(len(an))
 
+        d.append(len(an))
 
     matrix.an = an
     matrix.d = d
+
 
 def unpackingMatrix(matrix):
     an = matrix.an
@@ -47,7 +48,8 @@ def unpackingMatrix(matrix):
         for j in range(0, i+1, 1):
             lenRow = i+1
             if quantityElemenToRowS == 0:
-                break
+                matrixRezult[i][j] = 0
+                matrixRezult[j][i] = 0
             if i-j >= quantityElemenToRowS:
                 matrixRezult[i][j] = 0
                 matrixRezult[j][i] = 0
@@ -59,37 +61,36 @@ def unpackingMatrix(matrix):
     matrix.unpackingMatrix = matrixRezult
 
 
+def summMatrixs(matrix1, matrix2):
 
+    #создадим пустую матрицу
+    matrixResult = Matrix()
 
+    dA = matrix1.d
+    anA = matrix1.an
 
+    dB = matrix2.d
+    anB = matrix2.d
 
+    dr = []
+    anr=[]
+    row = matrix1.row
 
-def unpackingMatrix2(elements, row_ptr, n):
-    # Размер матрицы n равен количеству строк (длина row_ptr)
-    n = len(row_ptr)
+    dr.append(1)
+    anr.append(matrix1.an[0] + matrix2.an[0])
+    indexA = 1
+    indexB = 1
+    for i in range(1, row, 1):
+        startA = dA[i-1]
+        finishA = dA[i]
+        lenSegmA = finishA - startA
 
-    # Создаем матрицу n x n, заполненную нулями
-    matrix = numpy.zeros((n, n))
+        startB = dB[i-1]
+        finishB = dB[i]
+        lenSegmB = finishB - startB
 
-    # Индекс в массиве elements
-    element_index = 0
-
-    # Проходим по каждой строке
-    for i in range(n):
-        # Начало и конец элементов для строки i
-        start = row_ptr[i] - 1  # Начало строки в elements
-        end = row_ptr[i + 1] - 1 if i + 1 < len(row_ptr) else len(elements)  # Конец строки в elements
-
-        # Проходим по каждому элементу строки
-        for j in range(i, end - start + i):
-            matrix[i, j] = elements[element_index]  # Заполняем верхний треугольник
-            matrix[j, i] = elements[element_index]  # Симметрично заполняем нижний треугольник
-            element_index += 1
-
-    return matrix
-
-
-
+        for j in range(0, i, 1):
+            pass
 
 
 

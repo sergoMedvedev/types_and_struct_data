@@ -1,8 +1,13 @@
 
 #Класс матрицы
-class Matrix :
+class Matrix:
      def __init__(self, nameFileWithMatrix = ""):
+         self.nameFile = nameFileWithMatrix
          self.an = []
+         self.nr = []
+         self.nc = []
+         self.jr = []
+         self.jc = []
          self.d = []
          self.method = ""
          self.unpackingMatrix = [[]]
@@ -15,8 +20,12 @@ class Matrix :
          else:
              self.matrix = [[]]
 
-         self.row = len(self.matrix)
-         self.column = len(self.matrix[0])
+         try:
+            self.row = len(self.matrix)
+            self.column = len(self.matrix[0])
+         except IndexError:
+            print("Матрица в файле %s пустая. Не подлежит упоковки." % self.nameFile)
+
 
 
      def readMatrix(self, nameFile):

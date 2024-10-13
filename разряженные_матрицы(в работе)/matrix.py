@@ -13,7 +13,7 @@ class Matrix:
          self.unpackingMatrix = [[]]
 
 
-         path = "matrix/1part/" + nameFileWithMatrix
+         path = "matrix/" + nameFileWithMatrix
 
          if nameFileWithMatrix != "":
              self.matrix = self.readMatrix(path)

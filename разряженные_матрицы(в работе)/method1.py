@@ -1,5 +1,3 @@
-import numpy
-
 from matrix import Matrix
 from numpy import zeros
 #Метод сжания по Дженнингу

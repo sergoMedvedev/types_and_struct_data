@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="227a5dff-8641-4600-bdb2-00a9888cc9aa" name="Changes" comment="обновлением репы">
-      <change afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/2part/1matrix.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/2part/2matrix.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/1part/1matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/1part/1matrix.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/1part/2matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/1part/2matrix.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method1.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method2.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728682553684</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="обновлением репы">
+      <created>1728765078366</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728765078366</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

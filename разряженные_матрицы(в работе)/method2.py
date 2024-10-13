@@ -94,5 +94,13 @@ def unpackMatrix2(matrix):
 
     matrix.unpackingMatrix = mass
 
+def multiplicationMatrixMR(matrix1, mmatrix2): # возвращает матрицу и ее параметры упаковки
+    pass
+
+def multiplicationMatrix(matrix1, matrix2): # возвращает новую матрицу
+    pass
+
+
+
 
 

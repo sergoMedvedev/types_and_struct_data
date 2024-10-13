@@ -98,7 +98,25 @@ def multiplicationMatrixMR(matrix1, mmatrix2): # возвращает матри
     pass
 
 def multiplicationMatrix(matrix1, matrix2): # возвращает новую матрицу
-    pass
+    mass1 = matrix1.matrix
+    mass2 = matrix2.matrix
+    resultMatrix = Matrix()
+
+
+    if matrix1.row != matrix2.column:
+        print("Число столбцов первой матрицы должно быть равно числу строк второй матрицы")
+        return resultMatrix
+
+
+    result = [[0 for _ in range(len(mass2[0]))] for _ in range(len(mass1))]
+
+    # Умножение матриц
+    for i in range(len(mass1)):
+        for j in range(len(mass2[0])):
+            for k in range(len(mass2)):
+                result[i][j] += mass1[i][k] * mass2[k][j]
+    resultMatrix.matrix = result
+    return resultMatrix
 
 
 

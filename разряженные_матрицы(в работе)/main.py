@@ -17,7 +17,9 @@ print(test3.jc)
 
 unpackMatrix2(test3)
 
-test3.printMatrixunpacking()
+
+multiMatrix = multiplicationMatrix(test3, test4)
+multiMatrix.printMatrix()
 
 
 

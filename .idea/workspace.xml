@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="227a5dff-8641-4600-bdb2-00a9888cc9aa" name="Changes" comment="обновлением репы">
-      <change afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/2part/1matrix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/2part/2matrix.txt" afterDir="false" />
+    <list default="true" id="227a5dff-8641-4600-bdb2-00a9888cc9aa" name="Changes" comment="добавил умножение для обычных матриц">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method1.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/2part/1matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/2part/1matrix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/2part/2matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/matrix/2part/2matrix.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method2.py" beforeDir="false" afterPath="$PROJECT_DIR$/разряженные_матрицы(в работе)/method2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +239,28 @@
       <option name="project" value="LOCAL" />
       <updated>1728765078366</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="упаковка и распаковка по методу РМ">
+      <created>1728819522812</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728819522812</updated>
+    </task>
+    <task id="LOCAL-00013" summary="начал заниматься умножением">
+      <created>1728835410621</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1728835410621</updated>
+    </task>
+    <task id="LOCAL-00014" summary="добавил умножение для обычных матриц">
+      <created>1728840017182</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728840017182</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +269,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="++" />
     <MESSAGE value="обновлением репы" />
-    <option name="LAST_COMMIT_MESSAGE" value="обновлением репы" />
+    <MESSAGE value="упаковка и распаковка по методу РМ" />
+    <MESSAGE value="начал заниматься умножением" />
+    <MESSAGE value="добавил умножение для обычных матриц" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавил умножение для обычных матриц" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

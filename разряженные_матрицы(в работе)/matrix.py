@@ -46,6 +46,12 @@ class Matrix:
                  print(self.unpackingMatrix[i][j], end="\t")
              print("")
 
+     def transpose(self):
+         self.matrix = [list(row) for row in zip(*self.matrix)]
+         buf = self.row
+         self.row = self.column
+         self.column = buf
+
 def summMatrix(matrix1, matrix2):
     matrixResult = []
 
@@ -55,6 +61,7 @@ def summMatrix(matrix1, matrix2):
             bufMatrix.append(matrix1[i][j] + matrix2[i][j])
         matrixResult.append(bufMatrix)
     return matrixResult
+
 
 
 

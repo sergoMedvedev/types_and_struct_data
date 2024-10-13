@@ -8,18 +8,22 @@ test2 = Matrix("1part/2matrix.txt")
 test3 = Matrix("2part/1matrix.txt")
 test4 = Matrix("2part/2matrix.txt")
 
+
 pakcMatrix2(test3)
-print(test3.an)
-print(test3.nr)
-print(test3.nc)
-print(test3.jr)
-print(test3.jc)
+pakcMatrix2(test4)
 
-unpackMatrix2(test3)
+test4.transpose()
+
+res1 = multiplicationMatrix(test3, test4)
+res1.printMatrix()
+print("первая матрица")
+print()
+
+res = multiplicationMatrixMR(test3, test4)
+unpackMatrix2(res)
+res.printMatrixunpacking()
 
 
-multiMatrix = multiplicationMatrix(test3, test4)
-multiMatrix.printMatrix()
 
 
 

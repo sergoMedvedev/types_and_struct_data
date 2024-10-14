@@ -54,13 +54,18 @@ class Matrix:
 
 def summMatrix(matrix1, matrix2):
     matrixResult = []
+    res = Matrix()
 
-    for i in range(len(matrix1)):
+    row = matrix1.row
+    col = matrix1.column
+
+    for i in range(row):
         bufMatrix =[]
-        for j in range(len(matrix1[0])):
-            bufMatrix.append(matrix1[i][j] + matrix2[i][j])
+        for j in range(col):
+            bufMatrix.append(matrix1.matrix[i][j] + matrix2.matrix[i][j])
         matrixResult.append(bufMatrix)
-    return matrixResult
+    res.matrix = matrixResult
+    return res
 
 
 

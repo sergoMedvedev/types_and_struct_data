@@ -25,10 +25,10 @@ class Interface:
         for str in self.input_string:
             if str == "(":
                 self.cout_skobcki-=1
-                if self.cout_skobcki < 0 :
-                    return False
             elif str == ")":
                 self.cout_skobcki +=1
+                if self.cout_skobcki > 0:
+                    return False
             if str == '-':
                 if buff != '':
                     array_string_input.append(buff)

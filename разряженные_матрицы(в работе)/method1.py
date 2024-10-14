@@ -119,12 +119,16 @@ def summMatrixs(matrix1, matrix2):
 
             dr.append(len(anr))
         else:
+
             wasNotZeroElement = False
             for j in range(0, dA[i]- dA[i-1], 1):
                 summ = 0
                 summ = anA[dA[i-1]+j] + anB[dB[i-1]+j]
 
-                if summ == 0 and not wasNotZeroElement and dA != dA[i-1]+j:
+                if i == j and summ == 0:
+                    anr.append(summ)
+
+                if summ == 0 and wasNotZeroElement and dA != dA[i-1]+j:
                     continue
 
                 anr.append(summ)

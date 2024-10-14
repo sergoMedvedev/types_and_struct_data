@@ -28,24 +28,24 @@ def pakcMatrix2(matrix):
                 else:
                     nr.append(jr[i])
 
-                    cursor_idx = jr[i]
+                    cur_idx = jr[i]
 
-                    while nr[cursor_idx] != jr[i]:
-                        cursor_idx +=1
+                    while nr[cur_idx] != jr[i]:
+                        cur_idx +=1
 
-                    nr[cursor_idx] = len(an) - 1
+                    nr[cur_idx] = len(an) - 1
 
                 if jc[j] == -1:
                     jc[j] = len(an) - 1
                     nc.append(len(an) - 1)
                 else:
                     nc.append(jc[j])
-                    cursor_idx = jc[j]
+                    cur_idx = jc[j]
 
-                    while nc[cursor_idx] != jc[j]:
-                        cursor_idx+=1
+                    while nc[cur_idx] != jc[j]:
+                        cur_idx+=1
 
-                    nc[cursor_idx] = len(an) -1
+                    nc[cur_idx] = len(an) -1
 
     matrix.an = an
     matrix.nr = nr
@@ -101,7 +101,7 @@ def multiplicationMatrix(matrix1, matrix2): # возвращает новую м
     resultMatrix = Matrix()
 
 
-    if matrix1.row != matrix2.column:
+    if matrix1.column != matrix2.row:
         print("Число столбцов первой матрицы должно быть равно числу строк второй матрицы")
         return resultMatrix
 
@@ -119,7 +119,7 @@ def multiplicationMatrix(matrix1, matrix2): # возвращает новую м
 def multiplicationMatrixMR(matrix1, matrix2): # возвращает матрицу и ее параметры упаковки
     resultMatrix = Matrix()
 
-    if matrix1.row != matrix2.column:
+    if matrix1.column != matrix2.row:
         print("Число столбцов первой матрицы должно быть равно числу строк второй матрицы")
         return resultMatrix
 
@@ -157,14 +157,15 @@ def multiplicationMatrixMR(matrix1, matrix2): # возвращает матри�
 
             while not rowEnd: # цикл прохода по текущей строке
                 colEnd = False
+                # поиск текущего индекса по столбцу или строке в зависимости от переданных элементов
                 curRowElemInx = getCurrentInd(indexRow, matrix1.column, matrix1.jc, matrix1.nc)
 
                 while not colEnd:
-                    curColElemIdx = getCurrentInd(indexcol, matrix2.row, matrix2.jc, matrix2.nr)
+                    curColElemIdx = getCurrentInd(indexcol, matrix2.row, matrix2.jr, matrix2.nr)
                     if curColElemIdx > curRowElemInx: # если индекс элемента в колонке больше индекса элемента в строке, то нет смысла продолжать
                         break
 
-                    #поправка совпадения индекса элемента строки и столбца
+                    #пороверка совпадения индекса элемента строки и столбца
                     if curColElemIdx == curRowElemInx:
                         sum += matrix1.an[indexRow] * matrix2.an[indexcol]
 
